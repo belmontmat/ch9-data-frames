@@ -35,25 +35,25 @@ salaries$got_raise <- salaries$change > 0
 salaries[57,"salaries_2018"]
 
 # How many employees got a raise?
-length()
+length(salaries$got_raise[salaries$got_raise == TRUE])
 
 # What was the dollar value of the highest raise?
-
+max(salaries$change)
 
 # What was the "name" of the employee who received the highest raise?
-
+salaries[which(salaries$change == max(salaries$change)),"employees"]
 
 # What was the largest decrease in salaries between the two years?
-
+min(salaries$change)
 
 # What was the name of the employee who recieved largest decrease in salary?
-
+salaries[which(salaries$change == min(salaries$change)),"employees"]
 
 # What was the average salary change?
-
+mean(salaries$change)
 
 # For people who did not get a raise, how much money did they lose on average?
-
+mean(salaries$change[salaries$change < 0])
 
 ## Consider: do the above averages match what you expected them to be based on 
 ## how you generated the salaries?
