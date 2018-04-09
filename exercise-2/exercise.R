@@ -42,6 +42,7 @@ max(salaries$change)
 
 # What was the "name" of the employee who received the highest raise?
 salaries[which(salaries$change == max(salaries$change)),"employees"]
+# or salaries[salaries$change == max(salaries$change),1]
 
 # What was the largest decrease in salaries between the two years?
 min(salaries$change)
